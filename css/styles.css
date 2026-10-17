@@ -493,6 +493,7 @@ figure, blockquote { margin: 0; }
   color: #fff;
 }
 .post__img {
+  display: block;
   position: relative;
   overflow: hidden;
   aspect-ratio: 2 / 1;
@@ -915,7 +916,7 @@ figure, blockquote { margin: 0; }
 .socials a:hover { background: var(--red); border-color: var(--red); transform: translateY(-3px); }
 .socials svg { width: 18px; height: 18px; fill: #e6e6e6; }
 .thanks__mark { display: grid; place-items: center; }
-.thanks__mark img { width: min(100%, 560px); opacity: 0.8; filter: brightness(0.85); }
+.thanks__mark > * { width: min(100%, 560px); height: auto; opacity: 0.8; filter: brightness(0.85); }
 .footer {
   max-width: var(--maxw);
   width: 100%;
@@ -935,7 +936,7 @@ figure, blockquote { margin: 0; }
 @media (max-width: 860px) {
   .thanks__grid { grid-template-columns: 1fr; }
   .thanks__mark { order: -1; }
-  .thanks__mark img { width: 60%; }
+  .thanks__mark > * { width: 60%; }
 }
 
 /* ============ Reduced motion ============ */

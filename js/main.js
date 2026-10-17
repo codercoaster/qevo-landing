@@ -88,22 +88,22 @@ function renderDash(el) {
 document.querySelectorAll(".dash").forEach(renderDash);
 
 // ---------------------------------------------------------------------------
-// Talents carousel (placeholder roster: tags + handles to be replaced).
+// Talents carousel. `socials` maps platform → handle (order = render order).
 // Images are 600×750 WebP in assets/talents/<id>.webp
 // ---------------------------------------------------------------------------
 const TALENTS = [
-  { id: "agustinitita", name: "Agustinitita", tags: ["Cosplay", "IRL"], socials: ["instagram", "tiktok", "twitch", "x"] },
-  { id: "baki", name: "Baki", tags: ["Esports", "FPS"], socials: ["twitch", "kick", "x", "youtube"] },
-  { id: "evilcele", name: "Evilcele", tags: ["Gaming", "Just Chatting"], socials: ["twitch", "instagram", "tiktok", "x"] },
-  { id: "renzzotv", name: "RenzzoTV", tags: ["Fitness", "IRL"], socials: ["kick", "instagram", "tiktok", "youtube"] },
-  { id: "doni", name: "Doni", tags: ["Gaming"], socials: ["twitch", "youtube", "tiktok", "x"] },
-  { id: "moondays", name: "Moondays", tags: ["Just Chatting", "IRL"], socials: ["twitch", "instagram", "tiktok"] },
-  { id: "borkast", name: "Borkast", tags: ["Podcast", "Just Chatting"], socials: ["youtube", "kick", "instagram", "x"] },
-  { id: "niriiv", name: "Niriiv", tags: ["Esports"], socials: ["twitch", "instagram", "x"] },
-  { id: "daarknz", name: "Daarknz", tags: ["Gaming", "IRL"], socials: ["twitch", "kick", "tiktok", "x"] },
-  { id: "biceps", name: "Biceps", tags: ["Fitness"], socials: ["instagram", "tiktok", "youtube"] },
-  { id: "mac", name: "Mac", tags: ["Lifestyle", "IRL"], socials: ["instagram", "tiktok", "x"] },
-  { id: "creador", name: "Creador", tags: ["IRL"], socials: ["kick", "instagram", "tiktok"] },
+  { id: "agustinitita", name: "Agustinitita", tags: ["Gaming", "Cosplay", "IRL"], socials: { instagram: "aguslagarde", tiktok: "agustinitaclips", x: "agustinititaaa", twitch: "agustinitita" } },
+  { id: "baki", name: "Baki", tags: ["Valorant"], socials: { instagram: "bakivlrt", tiktok: "bakivlrt", x: "BakiVlrt", twitch: "baki" } },
+  { id: "evilcele", name: "EvilCele", tags: ["Gaming", "Moda", "IRL"], socials: { instagram: "evilcele", tiktok: "evilcele", twitch: "evilcele" } },
+  { id: "renzzotv", name: "RenzzoTV", tags: ["Shooters", "Fitness"], socials: { instagram: "renzzotv", tiktok: "renzzotv", kick: "renzzotv" } },
+  { id: "doni", name: "Doni", tags: ["League of Legends"], socials: { instagram: "donilool", youtube: "donilool7", tiktok: "donilool", twitch: "donilool", x: "donilool" } },
+  { id: "moondays", name: "Moondays", tags: ["Cosplay", "Moda", "Gaming", "IRL"], socials: { instagram: "moondaysok", twitch: "moon_days", tiktok: "moondaysok", x: "MoonDaysok", youtube: "MoonDays" } },
+  { id: "borkast", name: "Borkast", tags: ["Gaming", "Tech", "IRL"], socials: { tiktok: "borkast", instagram: "borkast_", youtube: "Borkast1" } },
+  { id: "niriiv", name: "Niriiv", tags: ["Gaming", "Fitness"], socials: { tiktok: "niriiv", instagram: "niriiv", youtube: "NiRiiV" } },
+  { id: "daarknz", name: "Daarknz", tags: ["FPS"], socials: { tiktok: "daarknzz", instagram: "darknzblood", kick: "daarknz" } },
+  { id: "biceps", name: "Biceps", tags: ["FPS", "Fitness"], socials: { tiktok: "bicepsoficial", youtube: "bicepsoficial", instagram: "bicepsoficial", kick: "biceps" } },
+  { id: "mac", name: "Mac de Mac", tags: ["League of Legends", "Lifestyle"], socials: { instagram: "rociobbarcia", tiktok: "macdetwitch", twitch: "macdemac", kick: "macdemac", x: "macdemacs" } },
+  { id: "creador", name: "Creador", tags: ["Gaming", "Tech", "Lifestyle", "DJ"], socials: { tiktok: "creador150", instagram: "creador150", twitch: "creador", x: "Creador150" } },
 ];
 
 const SOCIALS = {
@@ -123,8 +123,8 @@ function initTalents(section) {
   const pad = (v) => String(v).padStart(2, "0");
 
   stage.innerHTML = TALENTS.map((t, i) => {
-    const socials = t.socials
-      .map((k) => `<li><a href="${SOCIALS[k].url(t.id)}" target="_blank" rel="noopener" aria-label="${t.name} on ${SOCIALS[k].label}"><svg viewBox="0 0 24 24"><path d="${SOCIALS[k].path}"/></svg></a></li>`)
+    const socials = Object.entries(t.socials)
+      .map(([k, h]) => `<li><a href="${SOCIALS[k].url(h)}" target="_blank" rel="noopener" aria-label="${t.name} on ${SOCIALS[k].label}"><svg viewBox="0 0 24 24"><path d="${SOCIALS[k].path}"/></svg></a></li>`)
       .join("");
     return `<article class="talent" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${n}: ${t.name}">
       <div class="talent__img">
@@ -283,6 +283,30 @@ function splitWords(el) {
   return el.querySelectorAll(".split-word");
 }
 
+// Brush Q "written" stroke by stroke (like the signature GIF): oval → slash → inner strokes,
+// then the mask is dropped so the brush fibres stay crisp. Strokes use pathLength=100 (GSAP rounds px).
+function writeQ(svg, vars) {
+  const $ = (sel) => svg.querySelectorAll(sel);
+  gsap.set($(".q-stroke"), { strokeDasharray: 100, strokeDashoffset: 100 });
+  return gsap
+    .timeline(vars)
+    .to($(".q-oval"), { strokeDashoffset: 0, duration: 1.15, ease: "power1.inOut" })
+    .to($(".q-slash"), { strokeDashoffset: 0, duration: 0.45, ease: "power2.in" })
+    .to($(".q-inner"), { strokeDashoffset: 0, duration: 0.25, stagger: 0.08, ease: "power1.out" })
+    .add(() => svg.querySelector("image").removeAttribute("mask"));
+}
+
+// Copy of the hero Q (same mask strokes) with its own mask id so both animate independently
+function cloneQ(id) {
+  const svg = document.querySelector(".hero__q").cloneNode(true);
+  ["class", "data-filter", "data-depth", "aria-hidden"].forEach((a) => svg.removeAttribute(a));
+  svg.setAttribute("role", "img");
+  svg.setAttribute("aria-label", "Qevo logo");
+  svg.querySelector("mask").id = id;
+  svg.querySelector("image").setAttribute("mask", `url(#${id})`);
+  return svg;
+}
+
 function initAnimations() {
   gsap.registerPlugin(ScrollTrigger);
   gsap.globalTimeline.timeScale(1.6); // snappier reveals overall (scrubbed tweens follow scroll, unaffected)
@@ -325,17 +349,12 @@ function initAnimations() {
 
   // ---- Hero intro
   const heroChars = splitChars(document.querySelector(".hero__title"));
-  const qStrokes = gsap.utils.toArray(".hero__q .q-stroke");
-  gsap.set(qStrokes, { strokeDasharray: 100, strokeDashoffset: 100 }); // pathLength=100 (GSAP rounds px)
+  const footerQ = cloneQ("q-write-footer"); // cloned before the hero intro drops its mask
   root.classList.remove("js-anim");
   const intro = gsap
     .timeline({ paused: true, defaults: { ease: "expo.out" } })
     // layers: intro uses mask/clip-path, scroll uses yPercent, mouse uses x/y — no conflicts
-    // Q written stroke by stroke (like the signature GIF), then the mask is dropped so the brush fibres stay crisp
-    .fromTo(".hero__q .q-oval", { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 1.15, ease: "power1.inOut" })
-    .fromTo(".hero__q .q-slash", { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.in" })
-    .fromTo(".hero__q .q-inner", { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.25, stagger: 0.08, ease: "power1.out" })
-    .add(() => document.querySelector(".hero__q image").removeAttribute("mask"))
+    .add(writeQ(document.querySelector(".hero__q")))
     .addLabel("reveal", "-=0.25")
     // Kevin grows from the centre line outward (up + down), like the GIF's divider bar
     .fromTo(
@@ -362,6 +381,10 @@ function initAnimations() {
   Promise.race([ready, new Promise((r) => setTimeout(r, 2500))]).then(() =>
     requestAnimationFrame(() => requestAnimationFrame(() => intro.play()))
   );
+
+  // Footer Q: same brush writing as the hero, once, the first time it scrolls into view
+  document.querySelector(".thanks__mark img").replaceWith(footerQ);
+  writeQ(footerQ, { scrollTrigger: { trigger: footerQ, start: "top 80%", once: true } }).timeScale(1.7);
 
   // Hero parallax out
   const heroScroll = { trigger: ".hero", start: "top top", end: "bottom top", scrub: true };
