@@ -356,6 +356,7 @@ function initAnimations() {
   const heroChars = splitChars(document.querySelector(".hero__title"));
   const footerQ = cloneQ("q-write-footer"); // cloned before the hero intro drops its mask
   root.classList.remove("js-anim");
+  gsap.set(".hero__person", { xPercent: -50, x: 0 });
   const intro = gsap
     .timeline({ paused: true, defaults: { ease: "expo.out" } })
     // layers: intro uses mask/clip-path, scroll uses yPercent, mouse uses x/y — no conflicts
