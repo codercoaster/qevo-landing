@@ -719,10 +719,9 @@ figure, blockquote { margin: 0; }
   text-transform: uppercase;
   line-height: 1;
   padding: 0.45em 0.7em;
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  color: #cfcfcf;
+  border: 1.5px solid var(--red);
+  color: #fff;
 }
-.talent__tags li:first-child { border-color: var(--red); color: #fff; }
 .talent__socials { display: flex; gap: 6px; }
 .talent__socials a {
   display: grid;

@@ -104,6 +104,11 @@ const TALENTS = [
   { id: "biceps", name: "Biceps", tags: ["FPS", "Fitness"], socials: { tiktok: "bicepsoficial", youtube: "bicepsoficial", instagram: "bicepsoficial", kick: "biceps" } },
   { id: "mac", name: "Mac de Mac", tags: ["League of Legends", "Lifestyle"], socials: { instagram: "rociobbarcia", tiktok: "macdetwitch", twitch: "macdemac", kick: "macdemac", x: "macdemacs" } },
   { id: "creador", name: "Creador", tags: ["Gaming", "Tech", "Lifestyle", "DJ"], socials: { tiktok: "creador150", instagram: "creador150", twitch: "creador", x: "Creador150" } },
+  { id: "nano", name: "Nano", tags: ["Gaming", "IRL"], socials: { instagram: "marianoniccolas", youtube: "Nanocs1", kick: "nano", x: "marianoniccolas", tiktok: "nanocs1.twitch" } },
+  { id: "angelysaras", name: "Angel y Saras", tags: ["Gaming", "Fitness"], socials: { youtube: "angelysaras", twitch: "angelysaras", instagram: "angelysara", x: "AngelySaras", tiktok: "angelysaras89" } },
+  { id: "kadnita", name: "KADnita", tags: ["Valorant", "Moda"], socials: { twitch: "kadnita", instagram: "camidambrosio", tiktok: "kadnita", x: "_CamilaDam_" } },
+  { id: "borraskka", name: "Borraskka", tags: ["Gaming", "Shooters"], socials: { twitch: "borraskka", youtube: "borraskka", instagram: "borraskka", x: "borraskkaaa", tiktok: "borraskkatwitch" } },
+  { id: "tempofps", name: "TempoFPS", tags: ["CODMobile Pro"], socials: { kick: "tempoofps", instagram: "tempoofps", tiktok: "tempofps" } },
 ];
 
 const SOCIALS = {
