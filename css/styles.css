@@ -430,17 +430,9 @@ figure, blockquote { margin: 0; }
   filter: blur(8px);
   z-index: -1;
 }
-/* Colour match to the original poster: saturate + fitted tone curves (#fara-match),
-   same grade on sky and demon so both layers share one palette. */
-.fara-grade img { filter: saturate(0.75) url(#fara-match) brightness(0.88) contrast(1.08); }
-.fara-grade .poster__sky { filter: saturate(0.75) url(#fara-match) brightness(0.76) contrast(1.08); } /* sky a touch darker than the demon */
-/* the demon is the protagonist: crisp contact edge + directional cast shadow onto the sky */
-.fara-grade .poster__demon {
-  filter: saturate(0.75) url(#fara-match) brightness(0.88) contrast(1.08)
-    drop-shadow(0 0 1.5px rgba(10, 0, 0, 0.7))
-    drop-shadow(-10px 16px 12px rgba(15, 0, 0, 0.55))
-    drop-shadow(-18px 30px 30px rgba(20, 0, 0, 0.4));
-}
+/* Colour grade (saturate + fitted tone curves) and the demon's contact/cast shadows are baked
+   into the WebPs: live SVG/drop-shadow filters re-rasterised on every parallax frame. */
+.poster__sky, .poster__demon { will-change: transform; }
 /* light vignette, corners only */
 .poster__frame::after {
   content: "";

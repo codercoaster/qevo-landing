@@ -109,25 +109,7 @@
       <rect width="100%" height="100%" filter="url(#noise)" />
     </svg>
 
-    <!-- Fara colour match: tone curves fitted against the original poster (low end crushed for deep blacks)
-       (applied after CSS saturate(0.75) so neutrals stay neutral and reds shift to coral) -->
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
-      <filter id="fara-match" color-interpolation-filters="sRGB">
-        <feComponentTransfer>
-          <feFuncR
-            type="table"
-            tableValues="0 0.045 0.130 0.250 0.399 0.479 0.559 0.634 0.710 0.786 0.851 0.907 0.959 0.979 0.986 0.993 1"
-          />
-          <feFuncG
-            type="table"
-            tableValues="0 0.040 0.135 0.290 0.503 0.571 0.610 0.649 0.689 0.728 0.767 0.806 0.846 0.885 0.924 0.963 1"
-          />
-          <feFuncB
-            type="table"
-            tableValues="0 0.035 0.115 0.255 0.437 0.484 0.531 0.578 0.626 0.673 0.720 0.767 0.814 0.861 0.909 0.956 1"
-          />
-        </feComponentTransfer>
-      </filter>
       <!-- one filter per logo so their hover states stay independent -->
       <filter id="q-distort-hero" x="-20%" y="-20%" width="140%" height="140%">
         <feTurbulence
@@ -170,7 +152,7 @@
         ><img
           class="q-fx"
           data-filter="q-distort-nav"
-          src="assets/logo-q.png"
+          src="assets/logo-q.webp"
           alt=""
       /></a>
       <nav class="nav__links">
@@ -277,7 +259,7 @@
               </mask>
             </defs>
             <image
-              href="assets/logo-q.png"
+              href="assets/logo-q.webp"
               width="1280"
               height="1280"
               mask="url(#q-write)"
@@ -387,11 +369,14 @@
             </p>
           </div>
           <div class="fara__art" data-depth-scene>
-            <div class="poster fara-grade">
+            <div class="poster">
               <div class="poster__frame">
                 <img
                   class="poster__sky"
                   src="assets/fara-sky.webp"
+                  srcset="assets/fara-sky-sm.webp 600w, assets/fara-sky.webp 1122w"
+                  sizes="(max-width: 860px) min(96vw, 570px), 570px"
+                  decoding="async"
                   alt=""
                   data-depth="-0.4"
                 />
@@ -401,6 +386,9 @@
                 <img
                   class="poster__demon"
                   src="assets/fara-demon.webp"
+                  srcset="assets/fara-demon-sm.webp 560w, assets/fara-demon.webp 1024w"
+                  sizes="(max-width: 860px) min(88vw, 525px), 525px"
+                  decoding="async"
                   alt="Fara, a winged red demon perched on a giant sword"
                   data-depth="0.5"
                 />
@@ -447,7 +435,7 @@
                 rel="noopener"
               >
                 <img
-                  src="assets/post-jersey.jpg"
+                  src="assets/post-jersey.webp"
                   alt="Until the Sky Falls — FVN jersey teaser"
                 />
               </a>
@@ -461,7 +449,7 @@
                 rel="noopener"
               >
                 <img
-                  src="assets/post-roster-fvn.jpg"
+                  src="assets/post-roster-fvn.webp"
                   alt="Farenvehn presents — roster reveal"
                 />
               </a>
@@ -491,7 +479,7 @@
                 rel="noopener"
               >
                 <img
-                  src="assets/post-valorant.jpg"
+                  src="assets/post-valorant.webp"
                   alt="VALORANT 2026 roster reveal key visual"
                 />
               </a>
@@ -518,31 +506,31 @@
           <div class="events__grid">
             <figure class="event">
               <div class="event__img">
-                <img src="assets/event-1.jpg" alt="" />
+                <img src="assets/event-1.webp" alt="" />
               </div>
               <figcaption>Content creators at BA Gaming</figcaption>
             </figure>
             <figure class="event">
               <div class="event__img">
-                <img src="assets/event-2.jpg" alt="" />
+                <img src="assets/event-2.webp" alt="" />
               </div>
               <figcaption>Creator events at gaming centers</figcaption>
             </figure>
             <figure class="event">
               <div class="event__img">
-                <img src="assets/event-3.jpg" alt="" />
+                <img src="assets/event-3.webp" alt="" />
               </div>
               <figcaption>In-person cinema watch party</figcaption>
             </figure>
             <figure class="event">
               <div class="event__img">
-                <img src="assets/event-4.jpg" alt="" />
+                <img src="assets/event-4.webp" alt="" />
               </div>
               <figcaption>FarenFEM roster reveal</figcaption>
             </figure>
             <figure class="event">
               <div class="event__img">
-                <img src="assets/event-5.jpg" alt="" />
+                <img src="assets/event-5.webp" alt="" />
               </div>
               <figcaption>
                 OFC on-site tournament with themed dynamics
@@ -550,7 +538,7 @@
             </figure>
             <figure class="event">
               <div class="event__img">
-                <img src="assets/event-6.jpg" alt="" />
+                <img src="assets/event-6.webp" alt="" />
               </div>
               <figcaption>
                 Roster &amp; content creators event in Chile
@@ -621,7 +609,7 @@
           <ul class="brands__grid">
             <li class="brand">
               <img
-                src="assets/brands/riot.png"
+                src="assets/brands/riot.webp"
                 alt="Riot Games"
                 style="--k: 0.66"
                 loading="lazy"
@@ -629,7 +617,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/tencent.png"
+                src="assets/brands/tencent.webp"
                 alt="Tencent Games"
                 style="--k: 1.05"
                 loading="lazy"
@@ -637,7 +625,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/msi.png"
+                src="assets/brands/msi.webp"
                 alt="MSI"
                 style="--k: 0.66"
                 loading="lazy"
@@ -645,7 +633,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/redragon.png"
+                src="assets/brands/redragon.webp"
                 alt="Redragon"
                 style="--k: 0.86"
                 loading="lazy"
@@ -653,7 +641,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/dxracer.png"
+                src="assets/brands/dxracer.webp"
                 alt="DXRacer"
                 style="--k: 0.5"
                 loading="lazy"
@@ -661,7 +649,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/gamesir.png"
+                src="assets/brands/gamesir.webp"
                 alt="GameSir"
                 style="--k: 1.02"
                 loading="lazy"
@@ -669,7 +657,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/skinclub.png"
+                src="assets/brands/skinclub.webp"
                 alt="SkinClub"
                 style="--k: 0.95"
                 loading="lazy"
@@ -677,7 +665,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/farenvehn.png"
+                src="assets/brands/farenvehn.webp"
                 alt="Farenvehn"
                 style="--k: 0.7"
                 loading="lazy"
@@ -685,7 +673,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/teamjade.png"
+                src="assets/brands/teamjade.webp"
                 alt="Team Jade"
                 style="--k: 0.72"
                 loading="lazy"
@@ -693,7 +681,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/cade.png"
+                src="assets/brands/cade.webp"
                 alt="Cámara Argentina de Esports"
                 style="--k: 0.86"
                 loading="lazy"
@@ -701,7 +689,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/u7buy.png"
+                src="assets/brands/u7buy.webp"
                 alt="U7BUY"
                 style="--k: 0.92"
                 loading="lazy"
@@ -709,7 +697,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/topuplive.png"
+                src="assets/brands/topuplive.webp"
                 alt="TopUp Live"
                 style="--k: 0.9"
                 loading="lazy"
@@ -717,7 +705,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/wings.png"
+                src="assets/brands/wings.webp"
                 alt="Wings Store"
                 style="--k: 0.88"
                 loading="lazy"
@@ -725,7 +713,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/bonoxs.png"
+                src="assets/brands/bonoxs.webp"
                 alt="Bonoxs"
                 style="--k: 0.74"
                 loading="lazy"
@@ -733,7 +721,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/aurea.png"
+                src="assets/brands/aurea.webp"
                 alt="Aurea"
                 style="--k: 0.98"
                 loading="lazy"
@@ -741,7 +729,7 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/itero.png"
+                src="assets/brands/itero.webp"
                 alt="Itero"
                 style="--k: 0.98"
                 loading="lazy"
@@ -749,9 +737,17 @@
             </li>
             <li class="brand">
               <img
-                src="assets/brands/tifn.png"
+                src="assets/brands/tifn.webp"
                 alt="This Is Feliz Navidad"
                 style="--k: 0.66"
+                loading="lazy"
+              />
+            </li>
+            <li class="brand">
+              <img
+                src="assets/brands/corsair.svg"
+                alt="Corsair"
+                style="--k: 0.5"
                 loading="lazy"
               />
             </li>
@@ -864,7 +860,7 @@
             </ul>
           </div>
           <div class="thanks__mark">
-            <img src="assets/logo-q.png" alt="Qevo logo" />
+            <img src="assets/logo-q.webp" alt="Qevo logo" />
           </div>
         </div>
         <footer class="footer">

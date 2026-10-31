@@ -95,7 +95,7 @@ const TALENTS = [
   { id: "agustinitita", name: "Agustinitita", tags: ["Gaming", "Cosplay", "IRL"], socials: { instagram: "aguslagarde", tiktok: "agustinitaclips", x: "agustinititaaa", twitch: "agustinitita" } },
   { id: "baki", name: "Baki", tags: ["Valorant"], socials: { instagram: "bakivlrt", tiktok: "bakivlrt", x: "BakiVlrt", twitch: "baki" } },
   { id: "evilcele", name: "EvilCele", tags: ["Gaming", "Moda", "IRL"], socials: { instagram: "evilcele", tiktok: "evilcele", twitch: "evilcele" } },
-  { id: "renzzotv", name: "RenzzoTV", tags: ["Shooters", "Fitness"], socials: { instagram: "renzzotv", tiktok: "renzzotv", kick: "renzzotv" } },
+  { id: "grafo", name: "Grafo", tags: ["League of Legends", "IRL", "Fitness"], socials: { instagram: "ngrafo", kick: "grafo", youtube: "nGrafo", tiktok: "ngrafoh", x: "graaafo" } },
   { id: "doni", name: "Doni", tags: ["League of Legends"], socials: { instagram: "donilool", youtube: "donilool7", tiktok: "donilool", twitch: "donilool", x: "donilool" } },
   { id: "moondays", name: "Moondays", tags: ["Cosplay", "Moda", "Gaming", "IRL"], socials: { instagram: "moondaysok", twitch: "moon_days", tiktok: "moondaysok", x: "MoonDaysok", youtube: "MoonDays" } },
   { id: "borkast", name: "Borkast", tags: ["Gaming", "Tech", "IRL"], socials: { tiktok: "borkast", instagram: "borkast_", youtube: "Borkast1" } },
@@ -108,6 +108,7 @@ const TALENTS = [
   { id: "angelysaras", name: "Angel y Saras", tags: ["Gaming", "Fitness"], socials: { youtube: "angelysaras", twitch: "angelysaras", instagram: "angelysara", x: "AngelySaras", tiktok: "angelysaras89" } },
   { id: "kadnita", name: "KADnita", tags: ["Valorant", "Moda"], socials: { twitch: "kadnita", instagram: "camidambrosio", tiktok: "kadnita", x: "_CamilaDam_" } },
   { id: "borraskka", name: "Borraskka", tags: ["Gaming", "Shooters"], socials: { twitch: "borraskka", youtube: "borraskka", instagram: "borraskka", x: "borraskkaaa", tiktok: "borraskkatwitch" } },
+  { id: "naninu", name: "Naninu", tags: ["IRL", "Gaming", "Variedad"], socials: { instagram: "missnaninu", kick: "naninu", youtube: "missnaninu", tiktok: "naninustream" } },
   { id: "tempofps", name: "TempoFPS", tags: ["CODMobile Pro"], socials: { kick: "tempoofps", instagram: "tempoofps", tiktok: "tempofps" } },
 ];
 
