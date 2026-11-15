@@ -27,7 +27,7 @@ We reply within one business day.
 
 [![Contact us](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/cta.svg)](mailto:us@codercoaster.com?subject=Saw%20qevo-landing%20on%20GitHub)
 
-[![Website](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/web.svg)](https://codercoaster.com) [![LinkedIn](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/linkedin.svg)](https://www.linkedin.com/company/codercoaster/) [![X](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/x.svg)](https://x.com/codercoaster) [![Instagram](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/instagram.svg)](https://www.instagram.com/coder.coaster/) [![Email](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/email.svg)](mailto:us@codercoaster.com)
+[![Website](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/web.svg)](https://codercoaster.com) [![LinkedIn](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/linkedin.svg)](https://www.linkedin.com/company/codercoaster/) [![Instagram](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/instagram.svg)](https://www.instagram.com/coder.coaster/) [![Email](https://raw.githubusercontent.com/codercoaster/codercoaster/main/assets/email.svg)](mailto:us@codercoaster.com)
 
 ---
 
